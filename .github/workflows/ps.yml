@@ -19,4 +19,6 @@ jobs:
         orgName: ${{ secrets.ORG_NAME }}
         token: ${{ secrets.TOKEN }}
       run: |
+        $env:orgName
+        $env:token
         .\explorer.ps1
