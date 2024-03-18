@@ -16,8 +16,8 @@ jobs:
     - name: Execute PowerShell script
       shell: pwsh
       run: |
-        $orgName = $env:ORG_NAME
-        $token = $env:TOKEN
+        $orgName = $env:orgName
+        $token = $env:token
         .\explorer.ps1
 
       env:
