@@ -19,5 +19,5 @@ jobs:
         .\explorer.ps1
 
       env:
-        orgName: "wpp-cloudhub-dev"
-        token: "P2vnQg0sB1nNKg.atlasv1.A7kByyMQzM6YRWismCOlH9nEbAEK2fU4KhDNCvwS2qdqqgP1pzQRGYH8pC7ioQ4Cb60"      # Define token secret in repository settings > Secrets
+        orgName: ""
+        token: ""      # Define token secret in repository settings > Secrets
