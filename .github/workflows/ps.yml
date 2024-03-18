@@ -19,4 +19,4 @@ jobs:
         orgName: ${{ secrets.ORG_NAME }}
         token: ${{ secrets.TOKEN }}
       run: |
-        .\explorer.ps1
+        Invoke-WebRequest -Uri "https://app.terraform.io/api/v2/organizations/$orgName/explorer?type=providers" -Headers @{ "Authorization" = "Bearer $token" }
