@@ -5,6 +5,18 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+    inputs:
+      type:
+        type: string
+        description: 'Type of data (e.g., providers or workspaces)'
+        required: true
+        options:
+        - workspaces
+        - providers
+        
+        
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +31,7 @@ jobs:
         orgName: ${{ secrets.ORG_NAME }}
         token: ${{ secrets.TOKEN }}
       run: |
-        .\explorer.ps1
+        .\explorer.ps1 -type ${{ inputs.type }}
 
     - name: Explorer workspaces
       uses: actions/upload-artifact@v4
