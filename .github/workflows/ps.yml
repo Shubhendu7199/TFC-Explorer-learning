@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # GitHub Actions Windows runner
+    runs-on: ubuntu-latest  # GitHub Actions Windows runner
 
     steps:
     - name: Checkout repository
