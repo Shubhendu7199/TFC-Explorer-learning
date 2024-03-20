@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      type:
+        default: "workspaces"
+        description: "Value for Type"
 
   # workflow_dispatch:
   #   inputs:
