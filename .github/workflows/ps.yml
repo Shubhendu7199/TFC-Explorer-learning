@@ -35,6 +35,7 @@ jobs:
       env:
         orgName: ${{ secrets.ORG_NAME }}
         token: ${{ secrets.TOKEN }}
+        type: ${{ github.event.inputs.name }}
       run: |
         .\explorer.ps1
 
