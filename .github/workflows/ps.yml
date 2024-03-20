@@ -24,10 +24,9 @@ jobs:
     - name: Explorer workspaces
       uses: actions/upload-artifact@v4
       with:
-        name: workspacedetails
+        name: workspacedetails-${{ github.run_id }}-${{ matrix.type }}-${{ github.run_number }}
         path: output.csv
 
-    # Define the types to run the job for each specified type
     strategy:
       matrix:
         type: [workspaces, providers, modules]
