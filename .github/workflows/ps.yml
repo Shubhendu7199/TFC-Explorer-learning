@@ -5,15 +5,15 @@ on:
     branches:
       - main
 
-  workflow_dispatch:
-    inputs:
-      type:
-        type: string
-        description: 'Type of data (e.g., providers or workspaces)'
-        required: true
-        options:
-        - workspaces
-        - providers
+  # workflow_dispatch:
+  #   inputs:
+  #     type:
+  #       type: string
+  #       description: 'Type of data (e.g., providers or workspaces)'
+  #       required: true
+  #       options:
+  #       - workspaces
+  #       - providers
         
         
 
