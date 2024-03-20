@@ -4,23 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      type:
-        default: "workspaces"
-        description: "Value for Type"
-
-  # workflow_dispatch:
-  #   inputs:
-  #     type:
-  #       type: string
-  #       description: 'Type of data (e.g., providers or workspaces)'
-  #       required: true
-  #       options:
-  #       - workspaces
-  #       - providers
-        
-        
 
 jobs:
   build:
@@ -35,12 +18,16 @@ jobs:
       env:
         orgName: ${{ secrets.ORG_NAME }}
         token: ${{ secrets.TOKEN }}
-        type: ${{ github.event.inputs.name }}
       run: |
-        .\explorer.ps1
+        .\explorer.ps1 -type ${{ matrix.type }}
 
     - name: Explorer workspaces
       uses: actions/upload-artifact@v4
       with:
         name: workspacedetails
         path: output.csv
+
+    # Define the types to run the job for each specified type
+    strategy:
+      matrix:
+        type: [workspaces, providers, modules]
